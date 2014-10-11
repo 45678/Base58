@@ -58,7 +58,7 @@
   Base58.decode = function(string) {
     var bytes, c, carry, j;
     if (string.length === 0) {
-      return new (typeof Buffer !== "undefined" && Buffer !== null ? Buffer : Uint8Array)(0);
+      return new (typeof Uint8Array !== "undefined" && Uint8Array !== null ? Uint8Array : Buffer)(0);
     }
     i = void 0;
     j = void 0;
@@ -94,7 +94,7 @@
       bytes.push(0);
       i++;
     }
-    return new (typeof Buffer !== "undefined" && Buffer !== null ? Buffer : Uint8Array)(bytes.reverse());
+    return new (typeof Uint8Array !== "undefined" && Uint8Array !== null ? Uint8Array : Buffer)(bytes.reverse());
   };
 
 }).call(this);
