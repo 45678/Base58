@@ -1,7 +1,7 @@
 Base58
 ======
 
-Get [`Base58.js`](https://raw.githubusercontent.com/45678/base58/blob/master/Base58.js)
+Get [`Base58.js`](https://raw.githubusercontent.com/45678/base58/master/Base58.js)
 and add it to your web page with a script tag:
 
     <script src="Base58.js" charset="utf-8"></script>
