@@ -1,7 +1,7 @@
 Base58
 ======
 
-Add a `<script src="base58.js" charset="UTF-8"></script>` to your web page.
+Add a `<script src="[Base58.js](https://github.com/45678/base58/blob/master/Base58.js)" charset="UTF-8"></script>` to your web page.
 `window.Base58` is defined when the script is executed.
 
     Base58.encode(new Uint8Array) returns a String
