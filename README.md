@@ -1,5 +1,5 @@
-Base58
-======
+Base58 in a `window`
+===================
 
 Get [`Base58.js`](https://raw.githubusercontent.com/45678/base58/master/Base58.js)
 and add it to your web page with a script tag:
@@ -11,11 +11,16 @@ and add it to your web page with a script tag:
     Base58.encode(new Uint8Array) returns a String
     Base58.decode(String) returns a Uint8Array
 
+
+Base58 in Node.js
+=================
+
 Run `npm install 45678/base58` to add the module to your package. Require it in
 your program with `Base58 = require("base58")`. Again, there are two methods:
 
     Base58.encode(new Buffer) returns a String
     Base58.decode(String) returns a Buffer
+
 
 Credits
 -------
