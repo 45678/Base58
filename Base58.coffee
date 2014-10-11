@@ -42,7 +42,7 @@ Base58.encode = (buffer) ->
   ).join ""
 
 Base58.decode = (string) ->
-  return new (Buffer ? Uint8Array)(0) if string.length is 0
+  return new (Uint8Array ? Buffer)(0) if string.length is 0
   i = undefined
   j = undefined
   bytes = [0]
@@ -72,4 +72,4 @@ Base58.decode = (string) ->
   while string[i] is "1" and i < string.length - 1
     bytes.push 0
     i++
-  new (Buffer ? Uint8Array)(bytes.reverse())
+  new (Uint8Array ? Buffer)(bytes.reverse())
