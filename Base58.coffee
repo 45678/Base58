@@ -1,11 +1,3 @@
-
-# Base58 encoding/decoding
-# Originally written by Mike Hearn for BitcoinJ
-# Copyright (c) 2011 Google Inc
-# Ported to JavaScript by Stefan Thomas
-# Merged Buffer refactorings from base58-native by Stephen Pair
-# Copyright (c) 2013 BitPay Inc
-
 Base58 = (module?.exports) or (window.Base58 = {})
 
 ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
@@ -50,7 +42,7 @@ Base58.encode = (buffer) ->
   ).join ""
 
 Base58.decode = (string) ->
-  return []  if string.length is 0
+  return new (Buffer ? Uint8Array)(0) if string.length is 0
   i = undefined
   j = undefined
   bytes = [0]
@@ -80,4 +72,4 @@ Base58.decode = (string) ->
   while string[i] is "1" and i < string.length - 1
     bytes.push 0
     i++
-  bytes.reverse()
+  new (Buffer ? Uint8Array)(bytes.reverse())
