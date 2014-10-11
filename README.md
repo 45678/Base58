@@ -1,14 +1,18 @@
 Base58
 ======
 
-Add a `<script src="[Base58.js](https://github.com/45678/base58/blob/master/Base58.js)" charset="UTF-8"></script>` to your web page.
-`window.Base58` is defined when the script is executed.
+Get [`Base58.js`](https://raw.githubusercontent.com/45678/base58/blob/master/Base58.js)
+and add it to your web page with a script tag:
+
+    <script src="Base58.js" charset="utf-8"></script>
+
+`window.Base58` is defined when the script is executed. There are two methods:
 
     Base58.encode(new Uint8Array) returns a String
     Base58.decode(String) returns a Uint8Array
 
-`npm install 45678/base58` to add the module to your package.
-Require it in your program with `Base58 = require("base58")`.
+Run `npm install 45678/base58` to add the module to your package. Require it in
+your program with `Base58 = require("base58")`. Again, there are two methods:
 
     Base58.encode(new Buffer) returns a String
     Base58.decode(String) returns a Buffer
