@@ -27,7 +27,6 @@ module.exports.createStream(objectMode:yes).on "data", (data) ->
       insertTestElement(data)
       renderBodyElement(data)
     when data.operator?
-      fixBrokenThrowsOperatorData(data)
       if data.ok is false
         failedTests.push(idOfCurrentlyRunningTest) unless idOfCurrentlyRunningTest in failedTests
       element = findElementForTest(idOfCurrentlyRunningTest)
@@ -38,7 +37,7 @@ module.exports.createStream(objectMode:yes).on "data", (data) ->
       idOfCurrentlyRunningTest = undefined
       renderTestElementEnded(findElementForTest(data.test), data)
       numberOfFailedTests.innerText = failedTests.length if failedTests.length isnt 0
-      numberOfTests.innerText = data.test
+      numberOfTests.innerText = data.test + 1
       renderBodyElement(data)
     else
       console.info("Unhandled", data)
@@ -103,13 +102,6 @@ insertFailure = (element, data) ->
       delay 1, ->
         untouched = false
         element.scrollIntoView(true)
-
-fixBrokenThrowsOperatorData = (data) ->
-  if (data.operator is "throws") and (data.name isnt data.actual)
-    data.ok = no
-    data.expected = data.name
-    data.name = undefined
-    data.fixedForThrowsOperator = yes
 
 findElementForTest = (id) ->
   document.getElementById("test_#{id}")
