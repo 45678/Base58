@@ -1,6 +1,6 @@
 {
-  "name": "Base58",
-  "version": "0.0.0",
+  "name": "base-58",
+  "version": "0.0.1",
   "description": "Base58 encoding & decoding for Node.js & web agent windows.",
   "main": "Base58.js",
   "repository": "45678/Base58",

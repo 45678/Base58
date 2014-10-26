@@ -8,18 +8,18 @@ and add it to your web page with a script tag:
 
 `window.Base58` is defined when the script is executed. There are two methods:
 
-    Base58.encode(new Uint8Array) returns a String
-    Base58.decode(String) returns a Uint8Array
+    Base58.encode(a Uint8Array) returns a String
+    Base58.decode(a String) returns a Uint8Array
 
 
 Base58 in Node.js
 =================
 
-Run `npm install 45678/base58` to add the module to your package. Require it in
-your program with `Base58 = require("base58")`. Again, there are two methods:
+Run `npm install base-58` to add the module to your package. Require it in
+your program with `Base58 = require("base-58")`. Again, there are two methods:
 
-    Base58.encode(new Buffer) returns a String
-    Base58.decode(String) returns a Buffer
+    Base58.encode(a Buffer or Uint8Array) returns a String
+    Base58.decode(a String) returns a Buffer
 
 
 Credits
