@@ -25,7 +25,7 @@ describe('Base58', function() {
       it('throws on ' + f.description, function() {
         assert.throws(function() {
           Base58.decode(f.string)
-        }, /Non-base58 character/)
+        }, /decode received unacceptable input/)
       })
     })
   })

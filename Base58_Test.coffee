@@ -1,7 +1,7 @@
 module.exports = (tape, Base58) ->
   tape "Base58", (test) ->
-    test.ok Base58.encode.constructor is Function
-    test.ok Base58.decode.constructor is Function
+    test.same Base58.encode.constructor, Function
+    test.same Base58.decode.constructor, Function
     test.end()
 
   tape "encode valid string input", (test) ->
@@ -21,7 +21,8 @@ module.exports = (tape, Base58) ->
   tape "can’t decode invalid input", (test) ->
     test.plan FIXTURES.invalid.length
     for fixture in FIXTURES.invalid
-      test.throws -> Base58.decode(fixture.string)
+      impossible = -> Base58.decode(fixture.string)
+      test.throws impossible, /decode received unacceptable input/
     test.end()
 
   FIXTURES =

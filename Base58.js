@@ -67,7 +67,7 @@
     while (i < string.length) {
       c = string[i];
       if (!(c in ALPHABET_MAP)) {
-        throw new Error("Non-base58 character");
+        throw "Base58.decode received unacceptable input. Character '" + c + "' is not in the Base58 alphabet.";
       }
       j = 0;
       while (j < bytes.length) {
